@@ -802,8 +802,15 @@ p {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
+    max-width: 100%;
 }
+@media screen and (max-width: 340px) {
+    .teachers  {
+        gap: 0px;
+    }
 
+
+}
 h3 {
     color: aquamarine;
     text-align: center;
@@ -823,7 +830,7 @@ h3:lang('ru') {
     display: grid;
     grid-template-rows: 2fr 2fr 1fr;
     transition: all 1s ease-in-out;
-
+align-items: center;
     justify-content: center;
 
 }
@@ -840,6 +847,20 @@ h3:lang('ru') {
 
 
 }
+@media screen and (max-width: 340px) {
+    .teachers h3 {
+        font-size: 0.8em;
+    }
+
+
+}
+@media screen and (max-width: 320px) {
+    .teachers h3 {
+        font-size: 0.7em;
+    }
+
+
+}
 .teachers p,
 .teachers h4 {
     text-align: center;
@@ -847,7 +868,29 @@ h3:lang('ru') {
 
 
 }
+@media screen and (max-width: 450px) {
+    .teachers p {
+        font-size: 0.9em;
+    }
 
+  
+
+
+}
+@media screen and (max-width: 340px) {
+    .teachers p {
+        font-size: 0.8em;
+    }
+
+
+}
+@media screen and (max-width: 320px) {
+    .teachers p {
+        font-size: 0.7em;
+    }
+
+
+}
 .teachers img {
     max-width: 100px;
    
@@ -855,7 +898,24 @@ h3:lang('ru') {
     margin: auto;
     transition: all 0.3s ease-in-out;
 }
+@media screen and (max-width: 450px) {
+    .teachers img {
+        max-width: 80px;
+        height: auto;
+    }
 
+
+
+}
+@media screen and (max-width: 340px) {
+  
+    .teachers img {
+        max-width: 60px;
+        height: auto;
+    }
+
+
+}
 .teachers>div:hover img {
     transform: scale(1.1);
 }
@@ -1258,7 +1318,14 @@ div.empty .dots {
     margin-left: 2em;
 
 }
+@media screen and (max-width: 340px) {
+  
+    div.empty .dots {
+        margin-left: 1em;
+    }
 
+
+}
 div.empty .loaderperm {
     padding: 5px;
     width: 20px;
@@ -1274,7 +1341,15 @@ div.empty .loaderperm {
 
     animation: wiggle 1s infinite linear;
 }
+@media screen and (max-width: 340px) {
+  
+    div.empty .loaderperm {
+        width: 10px;
+        height: auto;
+    }
 
+
+}
 div.empty .txt {
     background-color: white;
     border-radius: 1em;
