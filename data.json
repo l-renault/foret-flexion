@@ -1,0 +1,969 @@
+{
+    "chars": {
+        "m": {
+            "name": "Maike",
+            "avatars": {
+                "m1": {
+                    "src": "maike&.png"
+                },
+                "m2": {
+                    "src": "maike&.png"
+                },
+                "m3": {
+                    "src": "maike&.png"
+                }
+            }
+        },
+        "l": {
+            "name": "Lev",
+            "avatars": {
+                "l1": {
+                    "src": "lev&.png"
+                },
+                "l2": {
+                    "src": "lev&.png"
+                },
+                "l3": {
+                    "src": "lev&.png"
+                }
+            }
+        },
+        "i": {
+            "name": "Iris",
+            "avatars": {
+                "i1": {
+                    "src": "iris&.png"
+                },
+                "i2": {
+                    "src": "iris&.png"
+                },
+                "i3": {
+                    "src": "iris&.png"
+                }
+            }
+        },
+        "d": {
+            "name": "Domi",
+            "avatars": {
+                "d1": {
+                    "src": "domi&.png"
+                },
+                "d2": {
+                    "src": "domi&.png"
+                },
+                "d3": {
+                    "src": "domi&.png"
+                }
+            }
+        },
+        "u": {
+            "name": "Us",
+            "avatars": {
+                "u1": {
+                    "src": "avatar_happy&.png"
+                },
+                "u2": {
+                    "src": "avatar_hmm&.png"
+                },
+                "u3": {
+                    "src": "avatar_ooh&.png"
+                },
+                "u4": {
+                    "src": "yellow.png"
+                }
+            }
+        }
+    },
+    "script": {
+        "welcome": [
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Bienvenue dans la Forêt Flexion !",
+                "text_tu": "",
+                "avatar": "m1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "Les déclinaisons vous donnent du fil à retordre ?",
+                "text_tu": "Les déclinaisons te donnent du fil à retordre ?",
+                "avatar": "l1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "La grammaire et ses épines vous barrent la route ?",
+                "text_tu": "La grammaire et ses épines te barrent la route ?",
+                "avatar": "i1",
+                "action": "",
+                " var": ""
+            },
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "Oubliez vos tracas, ici on peut vous aider !",
+                "text_tu": "Oublie tes tracas, ici on peut t'aider !",
+                "avatar": "d1",
+                " action": "",
+                "var": ""
+            },
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Au fait, on se tutoie ?",
+                "text_tu": "",
+                "avatar": "m2",
+                "action": "",
+                "var": ""
+            },
+            [
+                {
+                    "chara": "u",
+                    "type": "c",
+                    "txt": "On se tutoie !",
+                    "text_tu": "",
+                    "avatar": "u1",
+                    "action": "tu",
+                    "var": "adresse"
+                },
+                {
+                    "chara": "u",
+                    "type": "c",
+                    "txt": "Je préfère qu'on se vouvoie.",
+                    "text_tu": "",
+                    "avatar": "u2",
+                    "action": "vous",
+                    "var": "adresse"
+                }
+            ],
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "C'est compris !",
+                "text_tu": "",
+                "avatar": "l2",
+                "action": "",
+                "goto": "ling"
+            }
+        ],
+        "ling": [
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "Quelle est la langue qui vous préoccupe ?",
+                "text_tu": "Quelle est la langue qui te préoccupe ?",
+                "avatar": "i2",
+                "action": "",
+                "var": ""
+            },
+            [
+                {
+                    "chara": "",
+                    "type": "b",
+                    "txt": "Deutsch",
+                    "text_tu": "",
+                    "avatar": "",
+                    "action": "de",
+                    "goto": "hallo"
+                },
+                {
+                    "chara": "",
+                    "type": "b",
+                    "txt": "<span lang='ru'>Русский язык</span>",
+                    "text_tu": "",
+                    "avatar": "",
+                    "action": "ru",
+                    "goto": "privet"
+                },
+                {
+                    "chara": "",
+                    "type": "b",
+                    "txt": "Lingua latīna",
+                    "text_tu": "",
+                    "avatar": "",
+                    "action": "lat",
+                    "goto": "salve"
+                }
+            ],
+            [
+                {
+                    "chara": "u",
+                    "type": "c",
+                    "txt": "J'aurais besoin de conseils...",
+                    "text_tu": "",
+                    "avatar": "u2",
+                    "action": "tips",
+                    "goto": "tips"
+                },
+                {
+                    "chara": "u",
+                    "type": "c",
+                    "txt": "Non, merci, rien de tout ça.",
+                    "text_tu": "",
+                    "avatar": "u3",
+                    "action": "rien",
+                    "goto": "notk"
+                }
+            ]
+        ],
+        "notk": [
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "Ah ? Comme vous voulez.",
+                "text_tu": "Ah ? Comme tu veux.",
+                "avatar": "d2",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Tschüss!",
+                "text_tu": "",
+                "avatar": "m1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "Пока!",
+                "text_tu": "",
+                "avatar": "l1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "i",
+                "type": "t ",
+                "text": "Vale !",
+                "text_tu": "",
+                "avatar": "i1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "...",
+                "text_tu": "",
+                "avatar": "d1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "... Tant que vous ne fermez pas cette page, nous restons ici, vous savez ?",
+                "text_tu": "... Tant que tu ne fermes pas cette page, nous restons ici, tu sais ?",
+                "avatar": "d2",
+                "action": "",
+                "var": ""
+            }
+        ],
+        "privet": [
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "Привет! Je m'appelle Lev. La grammaire russe est ma spécialité.",
+                "text_tu": "",
+                "avatar": "l1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "Je pourrai vous raconter bien des choses, mais je dois encore mettre de l'ordre dans mes notes.",
+                "text_tu": "Je pourrai te raconter bien des choses, mais je dois encore mettre de l'ordre dans mes notes.",
+                "avatar": "l2",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "Revenez donc me voir plus tard. Je ne sais pas encore quand...",
+                "text_tu": "Reviens donc me voir plus tard. Je ne sais pas encore quand...",
+                "avatar": "l3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "Un jour, peut-être...",
+                "text_tu": "",
+                "avatar": "l2",
+                "action": "",
+                "goto": "ling"
+            }
+        ],
+        "privetbis": [
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "<span lang='ru'>Привет!</span> Je m'appelle Lev. La grammaire russe est ma spécialité.",
+                "text_tu": "",
+                "avatar": "l1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "Je suppose que vous connaissez déjà les six cas classiques du russe, mais savez-vous qu'il en existe d'autres ?",
+                "text_tu": "Je suppose que tu connais déjà les six cas classiques du russe, mais sais-tu qu'il en existe d'autres ?",
+                "avatar": "l2",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "Mais je m'avance un peu loin. Qu'est-ce qui vous intéresserait ?",
+                "text_tu": "Mais je m'avance un peu loin. Qu'est-ce qui t'intéresserait ?",
+                "avatar": "l3",
+                "action": "",
+                "var": ""
+            },
+            [
+                {
+                    "chara": "",
+                    "type": "b",
+                    "txt": "<a href='theory.html' class='white' onclick='savethis(\"go_theo\",\"privetbye\")'>Leçons</a>",
+                    "text_tu": "",
+                    "avatar": "",
+                    "action": "de",
+                    "goto": "hallo"
+                },
+                {
+                    "chara": "",
+                    "type": "b",
+                    "txt": "<a href='practice.html' class='white' onclick='savethis(\"go_prac\",\"russian\")'>Exercices</a>",
+                    "text_tu": "",
+                    "avatar": "",
+                    "action": "de",
+                    "goto": "hallo"
+                }
+            ]
+        ],
+        "privetbye": [
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "Je pourrai vous expliquer bien des choses, mais je dois encore mettre de l'ordre dans mes notes.",
+                "text_tu": "Je pourrai t'expliquer' bien des choses, mais je dois encore mettre de l'ordre dans mes notes.",
+                "avatar": "l2",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "Revenez donc me voir plus tard. Je ne sais pas encore quand...",
+                "text_tu": "Reviens donc me voir plus tard. Je ne sais pas encore quand...",
+                "avatar": "l3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "l",
+                "type": "t",
+                "text": "Un jour, peut-être...",
+                "text_tu": "",
+                "avatar": "l2",
+                "action": "",
+                "goto": "ling"
+            }
+        ],
+        "salve": [
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "Salvē ! Je me nomme Iris. ",
+                "text_tu": "",
+                "avatar": "i2",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "Je suis disponible si vous avez des questions à propos de la grammaire latine.",
+                "text_tu": "Je suis disponible si tu as des questions à propos de la grammaire latine.",
+                "avatar": "i1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "Enfin... Je serai disponible.",
+                "text_tu": "",
+                "avatar": "i3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "Malheureusement, ma classe n'est pas encore prête. Revoyons-nous une autre fois !",
+                "text_tu": "",
+                "avatar": "i3",
+                "action": "",
+                "goto": "ling"
+            }
+        ],
+        "salvebis": [
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "Salvē ! Je me nomme Iris. ",
+                "text_tu": "",
+                "avatar": "i2",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "Je suis disponible si vous avez des questions à propos de la grammaire latine.",
+                "text_tu": "Je suis disponible si tu as des questions à propos de la grammaire latine.",
+                "avatar": "i1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "Mais ne me demandez pas de vous aider en versification ! Je n'ai aucun sens du rythme.",
+                "text_tu": "Mais ne me demandes pas de t'aider en versification ! Je n'ai aucun sens du rythme.",
+                "avatar": "i3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "Voici ce que je vous propose.",
+                "text_tu": "Voici ce que je te propose.",
+                "avatar": "i3",
+                "action": "",
+                "var": ""
+            },
+            [
+                {
+                    "chara": "",
+                    "type": "b",
+                    "txt": "<a href='theory.html' class='white' onclick='savethis(\"go_theo\",\"salvebye\")'>Leçons</a>",
+                    "text_tu": "",
+                    "avatar": "",
+                    "action": "de",
+                    "goto": "hallo"
+                },
+                {
+                    "chara": "",
+                    "type": "b",
+                    "txt": "<a href='practice.html' class='white' onclick='savethis(\"go_prac\",\"latin\")'>Exercices</a>",
+                    "text_tu": "",
+                    "avatar": "",
+                    "action": "de",
+                    "goto": "hallo"
+                }
+            ]
+        ],
+        "salvebye": [
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "Vous voulez en savoir plus sur les cas du latin ?",
+                "text_tu": "Tu veux en savoir plus sur les cas du latin ?",
+                "avatar": "i1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "...Malheureusement, je ne suis pas disponible pour le moment.",
+                "text_tu": "",
+                "avatar": "i3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "i",
+                "type": "t",
+                "text": "Mes leçons ne sont pas encore prêtes. Revoyons-nous une autre fois !",
+                "text_tu": "",
+                "avatar": "i3",
+                "action": "",
+                "goto": "ling"
+            }
+        ],
+        "hallo": [
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Hallo ! Je suis Maike.",
+                "text_tu": "",
+                "avatar": "m3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Faire votre connaissance m'enchante !",
+                "text_tu": "Faire ta connaissance m'enchante !",
+                "avatar": "m1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Je suis spécialiste en langue allemande, tout particulièrement en grammaire.",
+                "text_tu": "",
+                "avatar": "m3",
+                "action": "",
+                "var": ""
+            },
+            [
+                {
+                    "chara": "u",
+                    "type": "c",
+                    "txt": "Ah ! La grammaire...",
+                    "text_tu": "",
+                    "avatar": "u3",
+                    "action": "de_gram",
+                    "goto": "gramde"
+                },
+                {
+                    "chara": "u",
+                    "type": "c",
+                    "txt": "Oh, non...",
+                    "text_tu": "",
+                    "avatar": "u2",
+                    "action": "de_gram",
+                    "goto": "gramde"
+                }
+            ]
+        ],
+        "hallobis": [
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Hallo ! Je suis Maike.",
+                "text_tu": "",
+                "avatar": "m3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Faire votre connaissance m'enchante !",
+                "text_tu": "Faire ta connaissance m'enchante !",
+                "avatar": "m1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Je suis spécialiste en langue allemande, tout particulièrement en grammaire.",
+                "text_tu": "",
+                "avatar": "m3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Par quoi préféreriez-vous commencer ?",
+                "text_tu": "Par quoi préférerais-tu commencer ?",
+                "avatar": "m3",
+                "action": "",
+                "var": ""
+            },
+            [
+                {
+                    "chara": "",
+                    "type": "b",
+                    "txt": "<a href='theory.html' class='white' onclick='savethis(\"go_theo\",\"hallobye\")'>Leçons</a>",
+                    "text_tu": "",
+                    "avatar": "",
+                    "action": "de",
+                    "goto": "hallo"
+                },
+                {
+                    "chara": "",
+                    "type": "b",
+                    "txt": "<a href='practice.html' class='white' onclick='savethis(\"go_prac\",\"german\")'>Exercices</a>",
+                    "text_tu": "",
+                    "avatar": "",
+                    "action": "de",
+                    "goto": "hallo"
+                }
+            ]
+        ],
+        "hallobye": [
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Ah, vous arrivez un peu tôt !",
+                "text_tu": "Ah, tu arrives un peu tôt !",
+                "avatar": "m3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Présentement, les informations que je peux transmettre sont hébergées sur un autre site.",
+                "text_tu": "",
+                "avatar": "m1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "m",
+                "type": "t",
+                "text": "Cliquez sur le bouton ci-dessous pour y accéder !",
+                "text_tu": "Clique sur le bouton ci-dessous pour y accéder !",
+                "avatar": "m3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "",
+                "type": "b",
+                "txt": "<a href='https://landbot.online/v3/H-2152330-ML88FYMRJNXB6PFN/index.html'target='_blank'class='white'>Maike sur Landbot</a>",
+                "text_tu": "",
+                "avatar": "",
+                "action": "de",
+                "goto": "hallo"
+            }
+        ],
+        "coucou": [
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "Coucou ! Moi, c'est Domi.",
+                "text_tu": "",
+                "avatar": "d3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "Je suis comme vous, j'apprend les langues !",
+                "text_tu": "Je suis comme toi, j'apprend les langues !",
+                "avatar": "d1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "J'ai quelques astuces à partager.",
+                "text_tu": "",
+                "avatar": "d3",
+                "action": "",
+                "var": ""
+            },
+            [
+                {
+                    "chara": "u",
+                    "type": "c",
+                    "txt": "« Domi », c'est pour « Dominique » ?",
+                    "text_tu": "",
+                    "avatar": "u3",
+                    "action": "de_gram",
+                    "goto": "gramde"
+                },
+                {
+                    "chara": "u",
+                    "type": "c",
+                    "txt": "« Domi », ça vient de « Do ré mi fa sol la si do » ?",
+                    "text_tu": "",
+                    "avatar": "u1",
+                    "action": "de_gram",
+                    "goto": "gramde"
+                }
+            ]
+        ],
+        "coucoubis": [
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "Coucou ! Moi, c'est Domi.",
+                "text_tu": "",
+                "avatar": "d3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "Je suis comme vous, j'apprend les langues !",
+                "text_tu": "Je suis comme toi, j'apprend les langues !",
+                "avatar": "d1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "J'ai quelques conseils à partager. Passez me voir, si ça vous dit !",
+                "text_tu": "J'ai quelques conseils à partager. Passe me voir, si ça te dit !",
+                "avatar": "d3",
+                "action": "",
+                "var": ""
+            },
+           
+                {
+                    "chara": "",
+                    "type": "b",
+                    "txt": "<a href='theory.html'class='white' onclick='savethis(\"go_theo\",\"coucoubye\")'>Astuces</a>",
+                    "text_tu": "",
+                    "avatar": "",
+                    "action": "de",
+                    "goto": "hallo"
+                }
+        ],
+        "coucoubye": [
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "Je crois que Maike se charge de cette partie pour l'allemand...",
+                "text_tu": "",
+                "avatar": "d3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "Mais ça n'est que temporaire. Je prendrai le relais !",
+                "text_tu": "",
+                "avatar": "d1",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "d",
+                "type": "t",
+                "text": "Voici le lien vers le site de Maike. Il s'ouvrira dans un nouvel onglet.",
+                "text_tu": "",
+                "avatar": "d3",
+                "action": "",
+                "var": ""
+            },
+            {
+                "chara": "",
+                "type": "b",
+                "txt": "<a href='https://landbot.online/v3/H-2152330-ML88FYMRJNXB6PFN/index.html'target='_blank'class='white'>Maike sur Landbot</a>",
+                "text_tu": "",
+                "avatar": "",
+                "action": "de",
+                "goto": "hallo"
+            }
+        ]
+    },
+    "reactions": {
+        "good": [
+            "Fantastique !",
+            "Bravo !",
+            "Tout juste.",
+            "Bonne réponse !",
+            "Tout à fait.",
+            "Vous avez raison.",
+            "Félicitations !",
+            "Bien vu !",
+            "Beau travail !",
+            "Vous avez tout compris !",
+            "Vous vous débrouillez bien."
+        ],
+        "bad": [
+            "Ah, non, dommage…",
+            "Je regrette, ce n'est pas ça.",
+            "Malheureusement, non.",
+            "Aïe, ce n'est pas la bonne réponse.",
+            "Hmm… Non. Mais n'abandonnez pas !",
+            "Oh, non… Courage !",
+            "Non… Mais vous allez y arriver !",
+            "Vous faites erreur… Mais qui n'en fait pas ?",
+            "Oups, c'est incorrect.",
+            "Eh non. Réessayez !",
+            "Attention, vous faites fausse route."
+        ]
+    },
+    "rightanswers": {
+        "einenapfel": {
+            "case": "ac",
+            "why": "« Apfel » est le COD du verbe « essen », un verbe transitif."
+        },
+        "imladen": {
+            "case": "da",
+            "why": "La préposition « in » est une préposition mixte. Elle exige l’accusatif quand il y a mouvement et le datif quand elle désigne une position statique. Dans cette phrase, toute la scène se déroule dans un même magasin, sans mouvement."
+        },
+        "mich": {
+            "case": "ac",
+            "why": "Le verbe « sich erkundigen » réclame l’accusatif pour le pronom réfléchi."
+        },
+        "stammkunden": {
+            "case": "da",
+            "why": "La préposition « bei » demande le datif. C’est le verbe « sich erkundigen » qui réclame la préposition « bei ». « Stammkunde » est un nom masculin faible, d’où le -n à la fin du mot."
+        },
+        "fruchtabteilung": {
+            "case": "ge",
+            "why": "« Fruchabteilung » est le complément du nom « Stammkunde »."
+        },
+        "wen": {
+            "case": "ac",
+            "why": "La préposition « für » demande toujours l'accusatif. C'est le verbe « halten » qui fonctionne avec la préposition « für »."
+        },
+        "angestellter": {
+            "case": "nm",
+            "why": "Le pronom « Ich » correspond à l'attribut du sujet « kein Angestellter »."
+        },
+        "ertrotzdem": {
+            "case": "nm",
+            "why": "« Er » est le sujet de cette phrase."
+        },
+        "ihnennoch": {
+            "case": "da",
+            "why": "Le verbe « auffallen » se construit avec le datif."
+        },
+        "letzterwoche": {
+            "case": "da",
+            "why": "La préposition « seit » demande le datif."
+        },
+        "aepfel": {
+            "case": "ac",
+            "why": "« Äpfel » est le COD du verbe « verkaufen »."
+        },
+        "allersorten": {
+            "case": "ge",
+            "why": "Le génitif est employé ici pour exprimer la quantité, la multitude."
+        },
+        "aprikosen": {
+            "case": "da",
+            "why": "Le verbe « sich widmen » se construit avec le datif."
+        },
+        "meinensie": {
+            "case": "nm",
+            "why": "« Sie » est le sujet de cette phrase."
+        },
+        "gibts": {
+            "case": "nm",
+            "why": "L'expression de départ est « es gibt », où « es » est le sujet grammatical."
+        },
+        "kundin": {
+            "case": "nm",
+            "why": "On utilise ici le nominatif, car on interpelle quelqu'un."
+        },
+        "backobst": {
+            "case": "ge",
+            "why": "« Backobst » est le complément du nom « Regalen », il apporte des précisions, afin de savoir de quelles étagères il s'agit."
+        },
+        "diestimme": {
+            "case": "nm",
+            "why": "« Stimme » est le sujet de cette phrase, malgré sa position après le verbe « erklang »."
+        },
+        "sinduns": {
+            "case": "da",
+            "why": "L'adjectif « bewusst » exige le datif pour désigner la personne qui a conscience."
+        },
+        "dessen": {
+            "case": "ge",
+            "why": "L'adjectif « bewusst » demande également le génitif pour exprimer ce dont on a conscience."
+        },
+        "nachbarschaft": {
+            "case": "ge",
+            "why": "« Nachbarschaft » est le complément du nom Gourmets ». Il précise de quels gourmets il s'agit, ceux du quartier."
+        },
+        "muesli": {
+            "case": "ac",
+            "why": "« Müsli » est COD dans cette phrase, loin du verbe en dernière position car il s'agit d'une proposition subordonnée."
+        },
+        "kamzuuns": {
+            "case": "da",
+            "why": "La préposition « zu » exige le datif."
+        },
+        "mythos": {
+            "case": "nm",
+            "why": "« Kein Mythos » reprend et redfinit le sujet « der Mythos des Zankapfels », il s'agit donc d'un attribut du sujet."
+        },
+        "wegenaepfel": {
+            "case": "ge",
+            "why": "La préposition « wegen » demande traditionnellement le génitif."
+        },
+        "manchekriege": {
+            "case": "ac",
+            "why": "« Kriege » est le COD du verbe transitif « führen », ici conjugué au parfait."
+        },
+        "wissenschaftler": {
+            "case": "nm",
+            "why": "Cette proposition ne possède pas de verbe exprimé, il est simplement sous-entendu. Ce pourrait être « so sagen die Wissenschaftler », « so schreiben die Wissenschaftler »... On comprend donc que « Wissenschaftler » est un sujet, au nominatif."
+        },
+        "tuete": {
+            "case": "ac",
+            "why": "La préposition « auf » suivie de l'accusatif exprime un mouvement, ou plutôt ici, une direction."
+        },
+        "ihmins": {
+            "case": "da",
+            "why": "L'expression verbale « ins Wort fallen » réclame le datif."
+        },
+        "siees": {
+            "case": "ac",
+            "why": "« Es » est le COD du verbe « möchten »."
+        },
+        "gebensie": {
+            "case": "nm",
+            "why": "« Sie » est le sujet du verbe « geben » à l'impératif."
+        },
+        "riessihr": {
+            "case": "da",
+            "why": "Le verbe « wegreißen » implique une provenance, et peut sous-entendre la prépostion « aus », on lui adjoint donc un complément au datif."
+        },
+        "tueteweg": {
+            "case": "ac",
+            "why": "« Tüte » est le COD du verbe transitif « wegreißen »."
+        },
+        "liesssich": {
+            "case": "da",
+            "why": "Dans l'expression « sich die Butter vom Brot nehmen lassen », « sich » indique la provenance, sous-entendant la préposition « aus ». « Sich » est donc décliné au datif."
+        },
+        "butter": {
+            "case": "ac",
+            "why": "« Butter » est le COD du verbe à l'infinitif « nehmen »."
+        },
+        "derkunde": {
+            "case": "nm",
+            "why": "« Der Kunde » représente une partie de « wir », sujet de la phrase, il est donc lui-même au nominatif."
+        },
+        "zanks": {
+            "case": "ge",
+            "why": "« Zank » est le complément du nom « Tüte ». Il permet de désigner un sachet bien précis. Remarquez qu'on a utilisé plus haut le mot composé « Zankapfel » pour la même raison."
+        },
+        "diehat": {
+            "case": "ac",
+            "why": "Ce « die » tient lieu de « sie » dans un langage familier, et reprend le groupe « die Tüte des Zanks ». Ce groupe est le COD du verbe « konfiszieren », « die » est donc lui au aussi à l'accusatif."
+        },
+        "polizei": {
+            "case": "nm",
+            "why": "Malgré l'inversion de l'ordre des mots pour mettre l'objet en avant, « die Polizei » est le sujet de cette phrase, au nominatif."
+        }
+    }
+}

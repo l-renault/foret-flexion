@@ -1,0 +1,1361 @@
+:root {
+    --base-font: "Averia Serif Libre", Georgia, 'Times New Roman', Times, serif;
+    --cyr-font: "Vollkorn", Georgia, 'Times New Roman', Times, serif;
+    --bgcolor: #094835;
+    --btnon: #7fffd4;
+    --btnoff: #0f7e5d;
+    --shadow: #04424b;
+    --bggrad: linear-gradient(0deg, #04424b 0%, #094835 100%);
+    --bggradbody: linear-gradient(180deg, #0f7e5d, #094835 15em, #04424b 100%);
+    --bggradrad: radial-gradient(circle at 50% 0%, #0f7e5d 0%, #094835, #04424b 100%);
+    --bggradmodal: linear-gradient(0deg, #04424b 0%, #7fffd4 100%);
+    --txt: white;
+    --txtchat: #000080;
+    --chatbg: white;
+    --size: 1em;
+
+    --size-cyr: 1.1em;
+    --weight: 600;
+    --weight-cyr: 500;
+    --pagewidth: 600px;
+    overscroll-behavior: none;
+    hyphens: auto;
+    overflow-x: hidden;
+
+    background: var(--bggradbody);
+
+
+}
+
+@font-face {
+    font-family: 'Averia Serif Libre', serif;
+    src: url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap');
+}
+
+/*Need to declare the style variants of a font*/
+@font-face {
+    font-family: 'Averia Serif Libre', serif;
+    src: url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@300&display=swap');
+    font-style: italic;
+}
+
+body {
+    padding-bottom: 5px;
+    margin: auto;
+    color: var(--txt);
+    font-family: var(--base-font);
+    font-weight: var(--weight);
+    max-width: var(--pagewidth);
+    background: var(--bggrad);
+
+
+}
+
+body :lang(ru) {
+    font-family: var(--cyr-font);
+    font-size: var(--size-cyr);
+    font-weight: var(--weight-cyr);
+}
+
+:lang(ru) {
+    font-family: var(--cyr-font);
+    font-size: var(--size-cyr);
+    font-weight: var(--weight-cyr);
+}
+
+.canvas {
+    min-height: 100%;
+}
+
+main {
+    min-height: 100vh;
+}
+
+button {
+    font-size: var(--size);
+    font-family: var(--base-font);
+    cursor: pointer;
+}
+
+h3,
+h4,
+h5 {
+    text-align: center;
+}
+
+select {
+    appearance: none;
+    background-color: var(--btnon);
+    border-radius: 1em;
+    color: var(--txtchat);
+    padding: 5px 10px;
+    margin: 2px;
+    border-style: none;
+    font-size: var(--size);
+    font-family: var(--base-font);
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+    justify-content: center;
+
+
+    button {
+        border: none;
+        /*   border-left: aquamarine 6px solid;
+        border-right: aquamarine 6px solid; */
+        padding: 5px 10px;
+        max-width: 150px;
+        background-color: var(--btnoff);
+        color: white;
+        border-radius: 1em;
+        transition: all 0.3s;
+
+        &:hover {
+            cursor: pointer;
+            background-color: aquamarine;
+            color: navy;
+        }
+
+        &.on {
+            background-color: aquamarine;
+            color: navy;
+
+        }
+    }
+}
+
+.intab {
+    display: none;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.intab a {
+    text-decoration: underline;
+    color: aquamarine;
+
+    &:hover {
+        color: white;
+    }
+}
+
+@keyframes animateUp {
+    0% {
+        opacity: 0;
+        transform: translatey(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 0%;
+
+    width: 10em;
+    max-width: 500px;
+    border-radius: 1em;
+    position: fixed;
+    /* Stay in place */
+    z-index: 11;
+    /* Sit on top */
+    display: flex;
+    left: calc(50vw - 5em);
+    top: -100%;
+
+
+    justify-content: center;
+
+    /*  background: var(--bggradbody); */
+    /* Black fallback color */
+    background-color: #0000;
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: all 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    z-index: 12;
+    position: relative;
+    padding: 10px;
+    background-color: aquamarine;
+    width: 10em;
+    max-width: 500px;
+    /* 100% width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1em;
+    border: var(--btnoff) 3px solid;
+    border-left: 6px var(--btnoff) solid;
+    border-right: 6px var(--btnoff) solid;
+    transition: all 0.5s;
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    background-color: aquamarine;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 1em;
+    padding: 5px 10px;
+
+
+    color: navy;
+    display: block;
+    text-align: center;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+    color: white;
+    background-color: var(--btnoff);
+
+}
+
+.overlay a.on {
+    background-color: var(--btnoff);
+    border: var(--btnoff) 3px solid;
+    border-left: 6px var(--btnoff) solid;
+    border-right: 6px var(--btnoff) solid;
+    color: white;
+
+    &:hover {
+        background-color: #0000;
+        color: navy;
+    }
+}
+
+/* Position the close button (top right corner) */
+.overlay .close {
+
+    font-size: 2em;
+
+    &:hover,
+    &:focus {
+        background-color: aquamarine;
+        color: navy;
+        transform: scale(1.1);
+    }
+}
+
+.overlay div {
+    margin: 0.25em 0;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+
+}
+
+.hidden {
+    display: none;
+}
+
+a {
+    color: var(--txt);
+    text-decoration: none;
+}
+
+.blue {
+    color: aquamarine;
+}
+
+a.blue {
+    color: aquamarine;
+    text-decoration: underline;
+
+    &:hover {
+        color: white;
+    }
+}
+
+a.white {
+
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        color: navy;
+    }
+}
+
+.alignc {
+    text-align: center;
+}
+
+.alignr {
+    text-align: right;
+}
+
+.green {
+
+    padding: 5px 15px;
+    display: flex;
+    border-radius: 1em;
+    border-style: none;
+    transition-duration: 1s;
+    justify-content: center;
+    align-items: center;
+
+
+    color: white;
+
+    button {
+        background-color: #0f7e5d;
+        min-width: 200px;
+    }
+
+    &:hover {
+        color: navy;
+
+        button {
+            background-color: aquamarine;
+        }
+
+    }
+}
+
+blockquote {
+    text-indent: 1em;
+}
+
+.offtxt p,
+.offtxt blockquote,
+p.offtxt {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.tinytxt {
+    font-size: 0.7em;
+}
+
+p.tinytxt {
+    font-size: 0.7em;
+}
+
+img {
+    max-width: var(--pagewidth);
+    height: auto;
+    display: block;
+    width: 100%;
+}
+
+img.smallpic {
+    max-height: 80px;
+    width: auto;
+    margin: 10px auto;
+}
+
+.notopmg {
+    margin-top: 0%;
+}
+
+.bigtopmg {
+    margin-top: 2em;
+}
+
+a.btn {
+    display: flex;
+    border-radius: 1em;
+    width: calc(100% - 2em);
+    justify-content: center;
+    border-left: 6px aquamarine solid;
+    border-right: 6px aquamarine solid;
+    align-items: center;
+    border-radius: 2em;
+    transition: all 0.3s ease-in-out;
+
+    color: navy;
+
+    button {
+        background-color: #0000;
+        border: #0000;
+        color: white;
+        padding: 2px;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: aquamarine;
+
+        button {
+            color: navy;
+        }
+    }
+}
+
+.button {
+    display: flex;
+    border-radius: 1em;
+    width: calc(100% - 2em);
+    justify-content: center;
+    border-left: 6px aquamarine solid;
+    border-right: 6px aquamarine solid;
+    align-items: center;
+    border-radius: 2em;
+    transition: all 0.3s ease-in-out;
+
+    color: navy;
+
+    &:hover {
+
+        background-color: aquamarine;
+
+        button {
+            color: navy;
+        }
+    }
+
+    button {
+        background-color: #0000;
+        border: #0000;
+        color: white;
+        padding: 2px;
+    }
+
+}
+
+.v {
+
+    border-top: 3px aquamarine solid;
+    border-bottom: 3px aquamarine solid;
+}
+
+.btn:hover,
+.btn:focus {
+
+    background-color: aquamarine;
+
+    button {
+        color: navy;
+    }
+}
+
+.v.on {
+    background-color: aquamarine;
+
+    button {
+        color: navy;
+    }
+
+    &:hover {
+        background-color: var(--btnoff);
+
+        button {
+            color: white;
+        }
+
+    }
+}
+
+.godown {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+
+    &:hover {
+        transform: scaleX(2);
+    }
+}
+
+.godown button {
+    animation: point-down 4s ease-in-out infinite reverse;
+    transition: all 0.3s;
+    background-color: #0000;
+    border: none
+}
+
+
+@keyframes point-down {
+    0% {
+        transform: translateY(0px);
+    }
+
+    80% {
+        transform: translateY(5px);
+    }
+
+    90% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+.iconmenu .btn {
+    max-width: 100px;
+    font-size: 0.8em;
+}
+
+.smaller {
+
+    font-size: 0.8em;
+}
+#come{display: none;
+    background-color: #0000;
+    border: none;
+    svg{
+        transition: all 0.3s;
+        fill: aquamarine;
+        &:hover{
+            stroke:aquamarine;
+            fill:var(--btnoff);
+            transform: rotateZ(25deg);
+        }
+    }
+}
+@media screen and (max-width: 370px) {
+ #come {
+        display: block;
+    }
+  
+    #gone {
+        display: none;
+    }
+
+    /* Hide the original label */
+   
+}
+
+
+
+
+.menu {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 10px;
+
+}
+
+.iconmenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    row-gap: 10px;
+    align-items: center;
+}
+
+.iconmenu .on {
+    background-color: aquamarine;
+
+    button {
+        color: navy;
+    }
+
+    &:hover {
+        background-color: var(--btnoff);
+
+        button {
+            color: white;
+        }
+    }
+
+}
+
+@media screen and (max-width: 460px) {
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    .iconmenu {
+        display: none;
+    }
+
+
+}
+
+#logo {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#logo>svg {
+    fill: aquamarine;
+    max-width: 400px;
+}
+
+.content {
+    text-align: left;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+}
+
+.turn {
+    color: navy;
+    max-width: 90%;
+    display: block;
+    margin-bottom: 5px;
+    border-radius: 1em;
+}
+
+.turn>img {
+    max-height: 80px;
+    width: auto;
+    border-radius: 1em;
+}
+
+.them {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.them .txt {
+    background-color: white;
+    border-radius: 1em;
+    height: max-content;
+    width: fit-content;
+    border-top-left-radius: 0.2em;
+}
+
+.us>img {
+    margin-left: 5px;
+    max-height: 50px;
+}
+
+.them>img {
+    margin-right: 5px;
+
+}
+
+.name {
+    color: white;
+    font-size: 0.8em;
+    margin: 2px 0px;
+    padding: 5px 0px;
+}
+
+.small {
+    font-size: 0.8em;
+}
+
+.us {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    position: relative;
+    align-self: flex-end;
+    justify-items: end;
+    max-width: 70%;
+
+}
+
+.us .txt {
+    border-radius: 1em;
+    width: fit-content;
+    border-bottom-right-radius: 0.2em;
+    background-color: var(--btnon);
+}
+
+.us .txt button {
+    text-align: end;
+}
+
+.btns {
+    margin: auto;
+    text-align: center;
+    max-width: fit-content;
+    display: grid;
+    justify-items: center;
+    row-gap: 10px;
+}
+
+.twocol {
+    margin: auto;
+
+    max-width: fit-content;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    row-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+
+    & .button {
+        width: fit-content;
+        padding: 5px;
+
+
+    }
+}
+
+.btnmid {
+    margin: auto;
+    margin-top: 10px;
+    max-width: fit-content;
+
+    justify-items: center;
+    align-items: center;
+
+
+    button {
+        transition: all 0.3s;
+        width: fit-content;
+        padding: 5px 10px;
+        background-color: var(--btnoff);
+        border-radius: 1em;
+        color: white;
+        border: none;
+
+        &:hover {
+            background-color: aquamarine;
+            color: navy;
+        }
+
+    }
+}
+
+
+
+.twocol .on {
+    background-color: aquamarine;
+
+    &:hover {
+        background-color: var(--btnoff);
+    }
+
+    button {
+        color: navy;
+
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+.btns .btn {
+    width: fit-content;
+    padding: 5px;
+}
+
+.us .txt button {
+    border-radius: 1em;
+    padding: 5px 10px;
+    border-color: #0000;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--base-font);
+    font-weight: 400;
+    background-color: #0f7e5d;
+    color: white;
+    border-bottom-right-radius: 0.2em;
+
+    &:hover {
+        color: navy;
+        background-color: aquamarine;
+        transition-duration: 0.5s;
+
+    }
+}
+
+.us:hover {
+    button {
+        color: navy;
+        background-color: aquamarine;
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
+
+    ;
+}
+
+p {
+    display: block;
+    padding: 5px 10px;
+    margin: 2px;
+    position: relative;
+    border-radius: 10% / 50%;
+}
+
+.teachers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+h3 {
+    color: aquamarine;
+    text-align: center;
+
+}
+
+h3:lang('ru') {
+    font-size: 1.4em;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+
+
+.teachers>div {
+    cursor: pointer;
+
+    display: grid;
+    grid-template-rows: 2fr 2fr 1fr;
+    transition: all 1s ease-in-out;
+
+    justify-content: center;
+
+}
+
+.teachers h3 {
+    color: white;
+}
+@media screen and (max-width: 450px) {
+    .teachers h3 {
+        font-size: 0.9em;
+    }
+
+  
+
+
+}
+.teachers p,
+.teachers h4 {
+    text-align: center;
+    color: aquamarine;
+
+
+}
+
+.teachers img {
+    max-width: 100px;
+   
+    height: auto;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.teachers>div:hover img {
+    transform: scale(1.1);
+}
+
+.stout {
+    padding: 5px;
+    background-color: var(--btnoff);
+    width: 150px;
+    max-width: 150px;
+
+    &:hover {
+        background-color: aquamarine;
+    }
+}
+
+.hoverdiv img {
+    max-height: 100px;
+    width: auto;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.hoverdiv:hover img {
+    transform: scale(1.1);
+}
+
+.hoverdiv:hover button {
+    color: navy;
+    background-color: aquamarine;
+
+    a {
+        color: navy;
+    }
+}
+
+.flexc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#top_menu {
+    z-index: 10;
+    text-align: center;
+    margin: 0px 0px;
+    position: sticky;
+    padding: 5px;
+
+    background-color: var(--bgcolor);
+
+    top: 0px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.y_n {
+    margin: auto;
+    text-align: center;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 1em;
+}
+
+.test {
+    line-height: 1.5em;
+}
+
+.nom,
+.acc,
+.gen,
+.dat,
+.case {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    background-color: aquamarine;
+    display: inline-flex;
+
+    flex-direction: row;
+    border-radius: 0.5em;
+    color: navy;
+    gap: 5px;
+    align-items: center;
+
+    img {
+        margin: auto;
+        max-height: 1em;
+        width: auto;
+        display: inline;
+
+    }
+}
+
+.case {
+    background-color: var(--btnoff);
+    border-color: aquamarine;
+    color: white;
+    border-style: none;
+    border-left: 5px;
+    border-right: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.case:hover {
+    background-color: aquamarine;
+    border-color: aquamarine;
+    color: navy;
+
+}
+
+dialog {
+    padding: 0;
+    border: none;
+    background-color: var(--bgcolor);
+    color: white;
+    border-radius: 1em;
+    animation: fade-out 2s ease-out;
+
+}
+
+::backdrop {
+    background-color: aquamarine;
+    /* background-image: var(--bggradmodal);*/
+    opacity: 0.5;
+    animation: fadein 1s;
+
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.closebtn {
+    font-size: 0.8em;
+    margin-bottom: 1.5em;
+    align-self: center;
+    border-radius: 1em;
+    border-left: 6px aquamarine solid;
+    border-right: 6px aquamarine solid;
+    border-bottom: 0px aquamarine solid;
+    border-top: 0px aquamarine solid;
+    background-color: #0000;
+    color: white;
+    transition: all 0.7s;
+}
+
+.closebtn:hover {
+    background-color: aquamarine;
+    color: navy;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-items: center;
+    max-width: 300px;
+}
+
+.answers button {
+    padding: 5px 10px;
+    background-color: var(--btnoff);
+
+    border-radius: 1em;
+    color: white;
+    border-style: none;
+    max-width: 300px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    column-gap: 5px;
+    justify-items: center;
+}
+
+.answers button:hover {
+    background-color: aquamarine;
+    border-color: aquamarine;
+    color: navy;
+}
+
+.answers button.gotit {
+    background-color: aquamarine;
+    border-color: aquamarine;
+    color: navy;
+}
+
+.answers button.uh {
+    background-color: #0000;
+    border-color: #0000;
+    color: #0000;
+}
+
+dialog[open] {
+    animation: backdrop-down 0.7s ease-out;
+}
+
+/*  dialog[open]::backdrop {
+    animation: fadeIn 0.7s ease-out; 
+ 
+} 
+ */
+a.activelink {
+    display: block;
+    background-color: var(--btnoff);
+    width: max-content;
+    margin-bottom: 5px;
+    text-decoration: none;
+
+
+    p {
+        color: white;
+    }
+
+    &:hover {
+        background-color: aquamarine;
+
+        p {
+            color: navy
+        }
+
+        ;
+    }
+
+    border-radius: 1em;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+
+        display: none;
+    }
+
+    100% {
+        opacity: 1;
+
+        display: block;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+
+        display: block;
+    }
+
+    100% {
+        opacity: 0;
+
+        display: none;
+    }
+}
+
+@keyframes backdrop-fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.75;
+    }
+}
+
+@keyframes backdrop-down {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 1em;
+    }
+}
+
+/* Loading dots */
+.loader {
+    width: 60px;
+    align-self: center;
+    aspect-ratio: 2;
+    --_g: no-repeat radial-gradient(circle closest-side, var(--btnon) 90%, #0000);
+    background:
+        var(--_g) 0% 50%,
+        var(--_g) 50% 50%,
+        var(--_g) 100% 50%;
+
+    background-size: calc(100%/3) 40%;
+    animation: wiggle 1s infinite linear;
+}
+
+
+/*Debug section*/
+.bgblue {
+    background-color: blue;
+}
+
+/*End debug window*/
+
+.bout_c {
+    margin: auto;
+    text-align: center;
+    max-width: fit-content;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    column-gap: 1em;
+}
+
+.bout {
+    display: flex;
+    border-radius: 1em;
+    z-index: 2;
+    transition-duration: 1s;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f7e5d;
+}
+
+.bout:hover {
+    color: navy;
+    background-color: aquamarine;
+}
+
+.tsl {
+    position: relative;
+}
+
+.sparkle {
+    position: relative;
+    left: calc(50% - 0.25em);
+    width: 0.5em;
+    height: 1em;
+
+    border-radius: 5em;
+    border-left: 6px aquamarine solid;
+    border-right: 6px aquamarine solid;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    transform: rotateX(-45deg);
+}
+
+.arrow {
+
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 1em;
+    border-bottom: 10px aquamarine solid;
+    margin-bottom: 1em;
+}
+
+div.btn:hover>button>a {
+    color: navy;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+.empty {
+
+    color: navy;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    justify-content: center;
+    margin-bottom: 5px;
+    border-radius: 1em;
+}
+
+div.empty .dots {
+    background-color: white;
+    padding: 5px;
+    margin-left: 2em;
+
+}
+
+div.empty .loaderperm {
+    padding: 5px;
+    width: 20px;
+    align-self: center;
+    aspect-ratio: 2;
+    --_gg: no-repeat radial-gradient(circle closest-side, navy 90%, #0000);
+    background:
+        var(--_gg) 0% 50%,
+        var(--_gg) 50% 50%,
+        var(--_gg) 100% 50%;
+    background-size: calc(100%/3) 30%;
+
+
+    animation: wiggle 1s infinite linear;
+}
+
+div.empty .txt {
+    background-color: white;
+    border-radius: 1em;
+    height: max-content;
+    width: fit-content;
+    border-top-left-radius: 0.2em;
+}
+
+.teachers>div:hover .empty {
+    opacity: 100%;
+}
+
+#talking {
+    opacity: 0;
+
+}
+
+footer {
+    font-size: 0.7em;
+    text-align: center;
+
+    a {
+        text-decoration: underline;
+        color: aquamarine;
+
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+@keyframes wiggle {
+    20% {
+        background-position: 0% 0%, 50% 50%, 100% 50%;
+    }
+
+    40% {
+        background-position: 0% 100%, 50% 0%, 100% 50%
+    }
+
+    60% {
+        background-position: 0% 50%, 50% 100%, 100% 0%
+    }
+
+    80% {
+        background-position: 0% 50%, 50% 50%, 100% 100%;
+    }
+}
+
+@keyframes comein {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes comeout {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
+@keyframes upwego {
+    0% {
+        bottom: 0%;
+        opacity: 100%;
+    }
+
+    80% {
+        opacity: 100%;
+    }
+
+    100% {
+        bottom: 100%;
+        opacity: 0%;
+    }
+}

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!<![endif]-->
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Forêt Flexion | Ressources</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<noscript>Le javascript est désactivé dans votre navigateur. Sans javascript, cette page ne pourra pas fonctionner
+    correctement. Activez-le pour pouvoir accéder au contenu de ce site.</noscript>
+
+<body onload="" onKeyDown="opendebug(event);">
+
+
+    <div class="canvas">
+        <div id="debug" class="hidden">
+            <h3 id="" onclick="" class="">
+                Debugging</h3>
+            <div id="" class="d_main">
+                <div class="d_row" onclick="">
+                    <button type="reset" class="d" id="reset_all">Annuler tout</button>
+                    <p>Remet toutes les var à 0</p>
+                </div>
+                <div class="d_row">
+                    <button type="button" class="d" id="bg_blue" onclick="setvar('blue');">Bleu</button>
+                    <p>Couleur de fond</p>
+                </div>
+                <div class="d_row" onclick="">
+                    <button type="button" class="d" id="bg_pink">Rose</button>
+                    <p>Couleur de fond</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The overlay -->
+        <div id="myNav" class="overlay">
+            <!-- Button to close the overlay navigation -->
+    
+            <!-- Overlay content -->
+            <div id="inmyNav" class="overlay-content">
+                <a href="javascript:void(0)" class="close" onclick="closeNav()">x</a>
+                <div><a href="index.html" class="">Accueil</a></div>
+                <div><a href="theory.html">Théorie</a>
+                </div>
+                <div>
+                    <a href="practice.html">Pratique</a>
+                </div>
+                <div>
+                    <a href="#" class="on">Ressources</a>
+                </div>
+                <div> <a href="help.html">Aide</a></div>
+                <div><a href="settings.html">Préférences</a></div>
+                <div><a href="about.html">À propos</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <a href="index.html">
+                <div id="logo" role="heading" aria-level="1" aria-label="Forêt Flexion">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.816 16.492">
+                        <path
+                            d="M46.175 238.919c-2.446 0-5.583 1.341-6.51 3.709-.77 1.972-1.183 2.406-2.051 2.761-.474.197-.612.75-.355 1.184.552.927 1.913-.415 1.913 2.92v.571c0 1.657-.118 1.993-.612 2.644-.808 1.065-1.518.907-1.518 1.834 0 .513.473.868 1.203.868h3.676c2.27-.618.131-4.839.131-7.2v-1.065l1.756.118c1.676.118 1.854-.533 2.426-1.618.237-.453.08-.769-.572-.749l-3.53.098c.137-1.972.532-3.471 1.597-3.471 1.144 0 1.381 1.992 2.15 1.953.79-.06.69-.928.79-2.052.078-.809.216-1.302.196-1.914-.02-.414-.217-.591-.69-.591zm4.411 0c-1.9 0-3.43 1.485-3.43 3.327 0 1.934 1.53 3.35 3.43 3.35 1.888 0 3.43-1.497 3.43-3.35 0-1.923-1.542-3.327-3.43-3.327zm11.14 0c-1.087 0-3.474.056-4.498.056-.525 0-2.074.13-2.449.13-.462 0-.762.24-.762.639 0 .44.325.466.837 1.184.312.44.387 1.438.387 2.556v1.29c0 1.119-.075 2.116-.387 2.556-.512.718-.962.612-.962 1.238 0 .346.3.585.762.585.637 0 .974-.106 1.5-.106.536 0 .999.106 1.498.106.463 0 .762-.24.762-.585 0-.626-.45-.52-.962-1.238-.262-.386-.362-1.172-.374-1.677-.013-.64.225-.772.774-.48 1.562.812.937 4.113 3.698 3.993 2.62-.013 3.477-1.144 3.477-3.766 0-1.091-1.112-1.464-1.949-1.464-1.062 0-1.374 1.288-1.074 1.953.575 1.251.924 1.946.45 2.106-.987.333-.325-3.367-3.161-3.46 2.898-.679 5.185-2.143 5.185-3.58 0-1.185-1.666-2.036-2.753-2.036zm6.711 0a3.05 3.05 0 0 0-.754.1c-1.336.358-2.315 1.665-2.625 2.577-.197.575.61.706.972.272.46-.534.89-1.039 2.054-1.35 1.164-.312 1.72-.356 2.385-.123.548.263 1.185-.079.776-.457-.604-.512-1.709-1.032-2.808-1.02zm8.135 0c-1.48 0-2.762.655-3.548 1.938-.196.321-.226.481 0 .629.182.12.318.08.635-.161.437-.334.86-.575 1.72-.575 1.118 0 .86 1.19.814 3.102 0 .24-.03.588-.06.962l-.98-.133c-1.283-.08-1.434.36-1.857 1.096-.18.307-.06.521.438.508l2.46-.094c-.183 1.208-.066 2.912 2.733.83.604-.455 1.208-.696 1.57-.937.317-.214.468-.508.272-.802-.422-.628-1.51.414-1.313-2.473.15-2.246-1.057-3.89-2.884-3.89zm-26.801 1.069c.873-.03 1.845 1.09 2.231 2.05.414 1.037.437 2.05-.265 2.28-.91.3-1.957-.714-2.44-1.83-.507-1.163-.46-2.234.207-2.453a.938.938 0 0 1 .267-.047zm9.947.439c.71-.029 1.274.327 1.274.967 0 1.648-3.927 2.715-3.927 2.09 0-1.73.667-2.702 2.34-3.022.107-.02.211-.031.313-.035zm9.816.42a3.9 3.9 0 0 0-3.417 1.94c-1.061 1.838-.513 4.156 1.325 5.217 1.553.897 2.98.398 4.071-.456.272-.212.393-.44.307-.57-.144-.21-.344-.142-.72.032-.708.328-1.57.405-2.38-.063-.967-.558-1.587-1.537-1.486-2.388.092-.798.498-.564.884-.375.987.5 1.255.874 1.246 1.329-.013.44.075.826.45.915.303.072.643-.399.966-1.156.26-.61.318-1.289-.14-1.553-.543-.314-.69.58-2.13-.413-.446-.304-.743-.487-.217-1 .64-.55 1.506-.695 2.274-.251.794.458 1.07 1.193 1.106 2.168.023.657.331.801.68.657.288-.121 1.124-1.192 1.261-1.469.188-.386 0-.518-.62-.76-.645-.258-.644-.717-1.697-1.325a3.612 3.612 0 0 0-1.763-.48zM48.72 246.06c-1.667 0-2.746.76-3.378 2.102-.524 1.117-.806 1.363-1.397 1.564-.323.112-.417.425-.242.67.376.526 1.304-.234 1.304 1.655v.324c0 .938-.08 1.128-.417 1.497-.551.603-1.035.514-1.035 1.04 0 .29.323.491.82.491.686 0 1.048-.078 1.613-.078.578 0 1.075.078 1.613.078.497 0 .82-.201.82-.492 0-.525.045-.436-.506-1.04-.336-.368-.417-1.228-.417-2.167v-.983l.667.067c1.142.067 1.263-.302 1.653-.916.161-.257.054-.436-.39-.425l-1.876.056c.094-1.118-.167-1.967.56-1.967.779 0 .94 1.129 1.464 1.106.538-.033.471-.525.538-1.162-.08-.886-.525-1.372-1.394-1.42zm2.598 0a.455.455 0 0 0-.314.152c-.287.292-.164.842-.072 1.268.102.449.184.764.184 2.84v1.39c0 .943-.061 1.785-.318 2.156-.42.606-.789.516-.789 1.043 0 .292.246.494.626.494.41 0 .789-.09 1.23-.09.43 0 .707.09 1.23.09.379 0 .625-.202.625-.494 0-.527-.37-.437-.79-1.043-.256-.37-.317-1.213-.317-2.155v-1.336c0-2.345.707-2.03.994-2.558.133-.247.03-.494-.185-.673-.246-.202-.707-.37-1.168-.674-.448-.294-.729-.418-.936-.41zm23.366 1.52c-.172-.006-.362.065-.543.219-.336.295-.548.48-.897.69-.45.27-.786.368-1.085.59-.262.197-.386.467-.224.738.349.578 1.321.11 1.321 1.513 0 1.034-.075 1.981-.387 2.387-.448.59-.835.53-.835 1.108 0 .32.3.578.76.578.636 0 .848-.099 1.372-.099.536 0 .748.099 1.122.099.337 0 .611-.222.636-.542.025-.307-.187-.664-.46-1.144-.737-1.292-.612-3.248.71-3.802 1.334-.553 1.939 1.477 1.378 3.101-.574 1.673-.805 1.267-.78 1.845.013.308.174.542.636.542.51 0 .598-.099 1.122-.099.536 0 1.06.099 1.559.099.461 0 .723-.222.76-.542.038-.356-.05-.529-.424-.898-.536-.529-.623-.96-.374-2.756.274-1.944-.66-2.916-2.182-2.916-1.247 0-2.206.554-2.792 1.624 0-1.378.224-1.845.037-2.104a.536.536 0 0 0-.43-.232zm-9.231.852a.906.906 0 0 0-.215.022 1.034 1.034 0 0 0-.461.22 1.08 1.08 0 0 0-.34.5.992.992 0 0 0-.048.311.983.983 0 0 0 .022.215.945.945 0 0 0 .062.2 1.08 1.08 0 0 0 .765.628 1.14 1.14 0 0 0 .432 0 1.05 1.05 0 0 0 .296-.107 1.046 1.046 0 0 0 .316-.26 1.039 1.039 0 0 0 .238-.783c-.004-.035-.007-.069-.015-.103a.916.916 0 0 0-.063-.197 1.021 1.021 0 0 0-.228-.335 1.09 1.09 0 0 0-.761-.31zm3.758 1.059c-1.682 0-3.038 1.315-3.038 2.946 0 1.712 1.356 2.966 3.038 2.966 1.672 0 3.038-1.325 3.038-2.966 0-1.703-1.366-2.946-3.038-2.946zm-8.97.596a.549.549 0 0 0-.077.002 6.41 6.41 0 0 1-1.02 0 .424.424 0 0 0-.471.423c0 .352.147.27.425.595.193.225.741.937 1.035 1.378l.247.379a13.645 13.645 0 0 1-1.367 1.315c-.278.234-.526.396-.526.712 0 .171.132.297.348.297.224 0 .634-.055.88-.055.24 0 .565.055.859.055.208 0 .347-.126.347-.297 0-.316-.417-.234-.425-.559-.008-.153.155-.441.363-.739l.533.802c.402.613.904.856 1.592.856h.86c.226 0 .506-.061.83-.061.317 0 .596.061.98.061.28 0 .46-.158.46-.354 0-.355-.386-.384-.655-.68-.21-.23-.88-.87-.88-1.353 0-.403 1.192-.101 1.076-.874-.034-.224-.709-.591-1.076-.74-1.15-.463-1.464.8-1.464 1.095 0 .68.97 1.616.775 1.872-.112.146-.213.247-.359.276-.106.022-.213-.068-.416-.251a8.113 8.113 0 0 1-1.035-1.18l-.371-.505c.572-.649.942-1.054 1.197-1.306.394-.406.65-.469.673-.766.015-.198-.108-.396-.394-.396-.31 0-.417.072-.75.072-.324 0-.463-.072-.695-.072-.216 0-.317.198-.317.396 0 .288.185.225.247.532.039.198-.17.513-.417.82a6.97 6.97 0 0 1-.425-.875c-.174-.464-.225-.857-.587-.875zm-3.96.058c-1.38 0-2.561 1.182-2.561 2.63 0 1.446 1.113 2.628 2.56 2.628 1.223 0 1.896-.781 2.249-1.657.088-.218.081-.395-.014-.442-.156-.075-.251.034-.414.265-.306.435-.788.774-1.427.774-.76 0-.931-.367-1.162-.903-.218-.503.102-.503.394-.523.754-.041.51.088.66.36.142.265.325.462.577.387.204-.061.244-.455.176-1.012-.054-.449-.25-.87-.61-.87-.429 0 .318.578-.871.483-.367-.028-.605-.034-.469-.517.19-.543.47-.898.728-.923.622-.06 1.04.34 1.393.903.237.38.468.36.624.156.13-.17.258-1.087.245-1.297-.02-.292-.177-.306-.625-.238-.469.068-.625-.204-1.454-.204zm12.208.292c.773-.026 1.634.966 1.976 1.816.367.918.387 1.814-.235 2.018-.805.265-1.733-.632-2.16-1.62-.45-1.03-.409-1.978.183-2.172a.835.835 0 0 1 .236-.042z"
+                            font-family="Basteleur" font-size="24"
+                            style="line-height:1.25;-inkscape-font-specification:Basteleur;white-space:pre"
+                            transform="translate(-37.042 -238.919)" />
+                    </svg>
+                </div>
+            </a>
+
+            <div class="iconmenu">
+                <a href="#" class="btn on">
+                    <div class="">
+                        <button class="" value="Ressources">Ressources</button>
+                    </div>
+                </a>
+                <a href="help.html" class="btn">
+                    <div class="">
+                        <button class="" value="Aide">Aide</button>
+                    </div>
+                </a>
+                <a href="settings.html" class="btn">
+                    <div class="">
+                        <button class="" value="Préférences">Préférences</button>
+                    </div>
+                </a>
+                <a href="about.html" class="btn">
+                    <div class="">
+                        <button class="" value="À propos">À propos</button>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <div id="top_menu" class="">
+            <a href="theory.html" class="btn v">
+                <div class="">
+                    <button value="Théorie" class="">
+                        Théorie</button>
+                </div>
+            </a>
+            <a class="btn hand smaller" id="gone" onclick="openNav();">
+                <button class="" value="Menu">Menu</button>
+            </a>
+            <a class="btn hand smaller" id="come" onclick="openNav();">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185.966 211.667">
+                    <defs>
+                      <path id="a" d="M695.13 197.653h98.571v133.788H695.13z" />
+                    </defs>
+                    <path
+                      d="M3914.47 805.729c-3.116-.754-7.281.012-11.748 1.357-13.323 3.99-14.483 11.24-5.21 30.15l2.362 4.804-.504.908-8.396-5.64c-19.029-12.658-23.208-3.872-23.353 8.343-.114 14.048 6.306 17.332 27.187 14.324l5.694-.82.534.924-8.297 6.641c-18.575 14.837-10.974 20.524.75 24.447 13.426 4.38 18.639-.48 21.924-21.5l.752-4.752 1.104-.225 3.443 9.526c8.117 22.249 16.64 16.711 23.708 6.873 8.254-11.345 5.001-17.691-13.707-27.657l-4.782-2.585.018-1.038 10.512-.312c23.1-.589 21.068-10.519 13.846-20.536-8.179-11.316-15.042-10.027-30.437 4.619l-3.85 3.661-1.215-.326 3.045-10.394c4.093-14.057 1.813-19.536-3.38-20.792zm92 70.215c-2.127-.63-4.753-.719-7.959-.38-11.078 1.105-19.401 5.344-5.423 22.027l6 7.119-.687.774-4.127-1.585c-18.24-7.043-24.503-5.128-27.187 7.57-2.264 11.134-1.23 19.796 19.113 11.83l9.098-3.552.49.85-3.27 4.156c-11.988 15.236-12.324 21.855-1.091 28.22 9.788 5.497 18.701 6.208 17.37-14.754l-.63-9.273.954.016 2.739 4.088c10.788 16.069 17.091 18.476 26.39 9.707 8.327-7.832 12.392-15.847-8.518-20.97l-9.672-2.353.3-1.118 4.682-1.38c18.731-5.524 22.911-10.394 17.663-22.103-4.654-10.351-11.624-16.532-22.707 1.583l-5.078 8.223-.834-.463.14-4.994c.498-14.602-1.378-21.349-7.756-23.238zm-77.568 20.3c-9.862-2.306-17.009 2.99-15.51 26.573l.944 13.912-1.431-.024-4.108-6.133c-16.184-24.105-25.64-27.717-39.588-14.561-12.492 11.748-18.59 23.772 12.777 31.458l14.51 3.528-.45 1.677-7.024 2.071c-28.098 8.286-34.37 15.591-26.496 33.156 6.981 15.528 17.436 24.8 34.062-2.375l7.619-12.335 1.251.695-.21 7.491c-.997 29.205 4.338 37.464 23.573 35.43 16.618-1.658 29.104-8.017 8.135-33.044l-9-10.678 1.03-1.161 6.193 2.377c27.36 10.566 36.756 7.693 40.781-11.356 3.397-16.701 1.847-29.696-28.67-17.746l-13.649 5.328-.736-1.275 4.905-6.234c17.985-22.856 18.49-32.785 1.639-42.332-3.671-2.061-7.26-3.674-10.547-4.443z"
+                      style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:55.0271px;line-height:1.25;font-family:Basteleur;-inkscape-font-specification:Basteleur;white-space:pre;display:inline;stroke-width:6.30911"
+                      transform="translate(-3859.053 -805.432)" />
+                  </svg>
+            </a>
+            <a href="practice.html" class="btn v">
+                <div class="">
+                    <button class="" value="Pratique">
+                        Pratique</button>
+                </div>
+            </a>
+        </div>
+
+        <main class="">
+            <div id="content" class="content">
+                <div class="pic">
+                    <img id="pic" src="smallsources&.png" alt="">
+
+                </div>
+                <div>
+                    <h3 class="notopmg">Sources & Ressources</h3>
+                    <div class="tabs">
+                        <button class="tablink btn" onclick="opentab(event,'german');">Deutsch</button>
+                        <button class="tablink btn" lang="ru" onclick="opentab(event,'russian');">Русский язык</button>
+                    </div>
+                    <div class="tabs">
+                        <button class="tablink btn" onclick="opentab(event,'latin');">Lingua latīna</button>
+                        <button class="tablink btn" onclick="opentab(event,'french');">Français</button>
+                    </div>
+                    <div class="intab" id="german">
+                        <h4>Grammaire</h4>
+
+                        <p>Grammatik mit Sinn und Verstand</p>
+
+                        <p><a href="https://www.deutschkurse-passau.de/JM/index.php/downloads" target="_blank">Deutsch -
+                                Aber hallo!</a> A1, A2, B1, B2, C1</p>
+
+                        <p><a href="https://deutsch.lingolia.com/fr/grammaire" target="_blank">La grammaire
+                                allemande</a>, Lingolia Deutsch</p>
+
+                        <p><a href="https://www.dieseskleinebuch.de/images/Dieses-kleine-Buch_optimiert.pdf"
+                                target="_blank">Dieses kleine Buch ist für dich</a></p>
+                        <h4>Lire</h4>
+                        <p class="offtxt">
+                            (Il est possible que ces ressources aient disparu, ou que les liens soient devenus inactifs.
+                            )</p>
+
+                        <p><a href="https://www.onleihe.de/goethe-institut/frontend/welcome,0-0-0-101-0-0-0-0-0-0-0.html"
+                                target="_blank">Onleihe</a>, la bibliothèque virtuelle du Goethe Institut</p>
+
+                        <p class="offtxt">On y trouve de la fiction, dont de la fiction jeunesse, des magazines, des
+                            journaux…<br>
+
+                            Empruntables pour une certaine durée, par tout personne ne résidant pas en Allemagne.<br>
+
+                            Malgré ce que dit la page française du site, nul besoin de s'inscrire à la bibliothèque d'un
+                            des
+                            Goethe Institut.</p>
+
+                        <p>Dans un tout autre style, <a href="https://www.webtoons.com/de/" target="_blank">le site de
+                                bandes dessinées Webtoon et son application</a> existent en
+                            version allemande.</p>
+
+                        <p class="offtxt"> Y sont proposées de nombreuses oeuvres traduites du coréen ou de l'anglais :
+                            romance,
+                            mystère,
+                            action… <br>
+
+                            Pourquoi ne pas tenter de relire une histoire que vous avez déjà lue en allemand ? <br>
+
+                            Des artistes de langue allemande y publient aussi leurs travaux.</p>
+
+                        <p> Le site du <a href="https://www.deutsch-perfekt.com/deutsch-lesen" target="_blank">magazine
+                                d'allemand langue étrangère Deutsch perfekt</a> propose une partie de sess
+                            articles en lecture libre.</p>
+
+                        <p class="offtxt">Ce magazine est rédigé de telle façon que même un public dont l'allemand est
+                            la langue
+                            maternelle puisse en apprécier la lecture. <br>
+
+                            Ce qui signifie que les articles de niveau "facile" sont tout aussi intéressants que les
+                            autres. <br>
+
+                            Les textes sont accompagnés d'un petit glossaire en allemand et de courts exercices.</p>
+                        <h4>Écouter</h4>
+
+
+                        <p class="offtxt">(Ces sites peuvent avoir disparu, leurs liens peuvent aussi être
+                            inustilisables.)</p>
+
+                        <p> Tout d'abord, <a href="https://learngerman.dw.com/de/fortgeschrittene/s-62079033"
+                                target="_blank">DW Deusch lernen</a>, souvent utilisé (à raison !) dans les salles de
+                            cours.</p>
+
+                        <p class="offtxt"> Ce site propose des courtes émissions de radio, abordant l'actualité, les
+                            expressions
+                            idiomatiques, ou encore la culture, la société, la politique… <br>
+
+                            On y trouve aussi des reportages vidéos. <br>
+
+                            Le tout complété d'exercices de compréhension, et surtout des transcriptions des textes !
+                        </p>
+
+                        <p> Parlons ensuite de <a href="https://detektor.fm/podcasts" target="_blank">la webradio
+                                Detektor.fm</a>.</p>
+
+                        <p class="offtxt"> Vous y trouverez des podcasts, reportages et interviews sur la science,
+                            l'emploi, les
+                            technologies, l'énergie, l'économie… <br>
+
+                            Puisqu'il s'agit d'une radio, vous pouvez vous y connecter et écouter au hasard ce qu'on y
+                            passe.<br>
+
+                            (Leur programmation musicale est aussi très sympa, mais ce sont surtout des chansons en
+                            anglais.)</p>
+
+                        <p> Pour finir, <a href="https://www.youtube.com/@MaritimVerlag/videos" target="_blank">la
+                                chaine YouTube de l'éditeur de Hörspiele, Maritim Verlag</a>.</p>
+
+                        <p class="offtxt"> Qu'est-ce qu'un Hörspiel ? Cela s'approche d'une pièce radiophonique. Parfois
+                            diffusé à la
+                            radio, mais surtout directement sur Internet ou via CD et cassettes à une époque, c'est un
+                            média
+                            populaire aussi bien chez les adultes que chez les plus jeunes. <br>
+
+                            Les éditions Maritim proposent régulièrement des versions intégrales de certains titres de
+                            leur
+                            catalogue. <br>
+
+                            Elles se spécialisent dans le policier, le thriller, le fantastique. Comptez environ une
+                            heure
+                            par récit !</p>
+                        <h4>Cours en vidéo (pas seulement la grammaire !)</h4>
+
+                        <p><a href="https://www.youtube.com/@deutschmitrieke/videos" target="_blank">Deutsch mit
+                                Rieke</a></p>
+
+                        <p><a href="https://www.youtube.com/@DeutschLera/videos" target="_blank">DeutschLera</a></p>
+
+                        <p><a href="https://www.youtube.com/@DeinSprachcoach/videos" target="_blank">Dein
+                                Sprachcoach</a></p>
+
+                        <p><a href="https://www.youtube.com/@EasyGerman/videos" target="_blank">Easy German</a></p>
+
+                        <p><a href="https://www.youtube.com/@ApprendreNaturAllemand/videos" target="_blank">Apprendre
+                                natur'allemand</a></p>
+                        <p><a href="https://www.youtube.com/@DeutschmitMarija" target="_blank">Deutsch mit Marija</a>
+                        </p>
+                        <p><a href="https://www.youtube.com/@MYGERMANSHORTSTORIES" target="_blank">My German Short
+                                Stories</a></p>
+                        <h4>Podcasts d'apprentissage</h4>
+
+                        <p><a href="https://shows.acast.com/aufdeutschgesagt" target="_blank"> Auf Deutsch gesagt!</a>
+                        </p>
+
+                        <p><a href="https://deutschmitschmidt.de/">Deutsch mit Schmidt</a></p>
+
+                        <p><a href="https://www.listennotes.com/podcasts/deutsch-podcast-deutsch-lernen-deutsch-5DIs6GlAOSq/"
+                                target="_blank">Deutsch Podcast - Deutsch lernen</a></p>
+
+                        <p><a href="https://slowgerman.com/" target="_blank"> Slow German</a></p>
+
+                        <p><a href="https://www.listennotes.com/podcasts/easy-german-learn-german-with-native-yPGpoXH6F4N/"
+                                target="_blank"> Easy German - Der Podcast</a></p>
+                    </div>
+                    <div class="intab" id="russian">
+                        <h4>Grammaire</h4>
+                        <p><a href="https://russe-uoh.univ-tlse2.fr/" target="_blank">Grammaire pratique du russe</a>,
+                            Béatrice Crabère (Université Toulouse Jean Jaurès), Vincent
+                            Benet (Inalco), Université ouverte des Humanités</p>
+                        <p>Кто? Где? Когда? Русская грамматика в картинках для начинающих</p>
+                        <p>The Case Book for Russian</p>
+                        <p>Russian Grammar in Illustrations</p>
+                        <h4>Cours en vidéo (pas seulement la grammaire !)</h4>
+                        <p><a href="https://www.youtube.com/@RussianWithMax" target="_blank">Russian with Max</a></p>
+                        <p><a href="https://www.youtube.com/@practicalrussian/videos" target="_blank">Practical
+                                Russian</a></p>
+                        <p><a href="https://www.youtube.com/@RussianwithDasha/videos" target="_blank">Russian with
+                                Dasha</a></p>
+                        <p><a href="https://www.youtube.com/@orusskomporusski/videos" lang="ru" target="_blank">О
+                                русском по-русски</a></p>
+                        <p><a href="https://www.youtube.com/@InRussianFromAfar/videos" target="_blank">In Russian From
+                                Afar</a></p>
+                        <p><a href="https://www.youtube.com/@apprendrelerusseavecplaisir/videos"
+                                target="_blank">Apprendre le russe avec plaisir</a></p>
+                        <p><a href="https://www.youtube.com/@LerussefacileavecDiana" target="_blank">Le russe facile
+                                avec Diana</a></p>
+                        <p><a href="https://www.youtube.com/@BeFluentinRussian/videos" target="_blank">Be Fluent in
+                                Russian</a></p>
+                        <p><a href="https://www.youtube.com/@AmazingRussian/videos" target="_blank">Amazing Russian</a>
+                        </p>
+                        <p><a href="https://www.youtube.com/@EasyRussianVideos" target="_blank">Easy Russian</a></p>
+                       
+                        <h4>Podcasts d'apprentissage</h4>
+                        <p><a href="https://www.russianwithmax.com/podcast/" target="_blank">Comprehensible Russian
+                                Podcast</a></p>
+                        <p><a href="https://russianpodcast.eu/podcasts" target="_blank">Russian Podcast</a></p>
+                        <p><a href="https://www.listennotes.com/podcasts/easy-russian-learn-russian-with-native-moBaHKuvpOc/"
+                                target="_blank">Easy Russian: <span lang="ru">Учим русский с носителями языка</span></a>
+                        </p>
+                        <p><a href="https://russianrocket.libsyn.com/" target="_blank"><span lang="ru">Ракета</span>:
+                                Simple Russian</a></p>
+                        <p><a href="https://www.listennotes.com/podcasts/a-spoonful-of-russian-learn-russian-online-Is3FrgdTnlO/"
+                                target="_blank">A Spoonful of Russian</a></p> <p><a href="https://tprsrussian.libsyn.com/" target="_blank">TPRS Russian – Effortless Russian</a></p>
+                                <p><a href="https://www.listennotes.com/podcasts/slow-russian-daria-molchanova-oDOR4fZc6HK/" target="_blank">Slow Russian</a></p>
+                    </div>
+                    <div class="intab" id="latin">
+                        <h4>Grammaire</h4>
+
+                        <p><a href="https://archive.org/details/MostCoulombe1reAnnee/page/n55/mode/2up"
+                                target="_blank">Le latin vivant par la méthode naturelle</a></p>
+                        <p> Lingua latina, per se illustrata</p>
+                        <p>Ecce Romani</p>
+                        <p> Les clés du latin - Lexique syntaxique</p>
+
+                        <h4 class="blue">Le latin, une langue morte ?</h4>
+                        <p class="offtxt blue">À notre grande surprise, les podcasts en latin sont assez nombreux, où
+                            l'on parle aussi bien de cuisine que de littérature ancienne.</p>
+                        <p class="offtxt blue">Sauriez-vous deviner ce que signifie l'expression latine contemporaine
+                            « potio socolatae » ?*</p>
+                        <p class="offtxt blue">Les prononciations employées varient entre la prononciation ancienne
+                            restituée et la prononciation ecclésiastique, proche de l'italien actuel.</p>
+                        <h4>Podcasts d'apprentissage</h4>
+
+                        <p><a href="https://www.habesnelac.com/lacpodcast" target="_blank">Latīnitās Animī Causā</a></p>
+                        <p><a href="https://podcasters.spotify.com/pod/show/satura-lanx" target="_blank">Satura Lanx: a
+                                podcast to learn Latin, in Latin</a></p>
+                        <p><a href="https://www.youtube.com/@infororomano/videos" target="_blank">In Forō Rōmānō</a></p>
+                        <p><a href="https://www.youtube.com/@LegioXIII/videos" target="_blank">Legio XIII</a></p>
+                        <p><a href="https://quomododicitur.com/category/episode/" target="_blank">Quomodo Dicitur?</a>
+                        </p>
+                        <p><a href="https://www.spreaker.com/podcast/sermones-raedarii--3581243"
+                                target="_blank">Sermones Raedarii</a>
+                        </p>
+                        <h4>Cours en vidéo (pas seulement la grammaire !)</h4>
+                        <p><a href="https://www.youtube.com/@latinitasanimicausa/videos" target="_blank">Latīnitās Animī
+                                Causā: Latin for Fun!</a></p>
+                        <p><a href="https://www.youtube.com/@latinetgrecancien" target="_blank">Latin et grec ancien</a>
+                        </p>
+                        <p><a href="https://www.youtube.com/@latintutorial/videos" target="_blank">Latin Tutorial</a>
+                        </p>
+                        <p><a href="https://www.youtube.com/@SoYouReallyWantToLearnLatin/videos" target="_blank">So you
+                                really want to learn Latin?</a></p>
+                        <p class="tinytxt alignr">*Chocolat chaud</p>
+                    </div>
+                    <div class="intab" id="french">
+                        <h4>Grammaire</h4>
+
+                        <p>Code du français courant, Henri Bonnard, 1981, Magnard</p>
+
+                        <p> <a href="https://francais.lingolia.com/fr/grammaire" target="_blank">Apprendre la grammaire
+                                française et s'exercer</a>, Lingolia français</p>
+
+                        <p><a href="https://fr.tsedryk.ca/" target="_blank"> Grammaire française pour tout le monde</a>
+                        </p>
+
+                        <p> <a href="https://archive.org/details/coursdelanguefra00maquuoft/page/462/mode/2up"
+                                target="_blank">Grammaire comparée de la langue française</a>, Cyprien Ayer, 1885</p>
+                    </div>
+
+
+
+
+
+
+
+
+
+                </div>
+                <div class="sparkle"></div>
+            </div>
+        </main>
+        <footer>Développé par <a href="https://linktr.ee/ipomoea_ae" target="_blank">Ipomoea</a></footer>
+
+    </div>
+    <script src="script.js" async defer></script>
+
+</body>
+
+</html>
